@@ -1,10 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Navigation, Pagination, EffectFade } from "swiper/modules";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules"; // removed Navigation
 import "swiper/css/effect-fade";
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import "swiper/css/pagination"; // removed navigation CSS
 
 const slides = [
   {
@@ -46,18 +45,17 @@ const BannerSlider = () => {
   return (
     <div className="container px-6 py-16 mx-auto">
       <Swiper
-        modules={[Autoplay, Navigation, Pagination, EffectFade]}
+        modules={[Autoplay, Pagination, EffectFade]} // no Navigation
         effect="fade"
         fadeEffect={{ crossFade: true }}
         autoplay={{ delay: 5000 }}
-        navigation
         pagination={{ clickable: true }}
         loop={true}
-        speed={1000} // smooth fade duration
+        speed={1000}
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="items-center lg:flex">
+            <div className="items-center lg:flex px-6 py-4 rounded-lg">
               <div className="w-full lg:w-1/2">
                 <div className="lg:max-w-lg">
                   <h1 className="text-3xl font-semibold text-gray-800 dark:text-white lg:text-4xl">
